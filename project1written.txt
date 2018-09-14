@@ -1,0 +1,17 @@
+- Question #1
+	Returns 0
+- Question #2
+Y is equal to x
+		Bitwise xor value and zero returns value
+	Complement mask + 1 results in an overflow so that z = 0
+	The value returned, is in turn, the value supplied
+- Question #3
+	Y = the opposite of x which is a value, and thus 0
+	Z is a mask of zeros created
+	0 bitwise-or with 0 results in 0
+	The opposite is returned, 1 always
+- Question #4
+	Return 2^(31 - n(param variable))
+- Question #5
+	Returns -1
+- Question #6
