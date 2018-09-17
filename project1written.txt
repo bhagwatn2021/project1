@@ -1,5 +1,10 @@
 - Question #1
-	Returns 0
+	First statement: declares an int z
+	Second statement: declares an int y and sets it equal to the parameter’s complement plus 1, or basically that number in two’s complement
+	Third statement: takes the bitwise OR of the parameter and it’s complement, so basically returns 1 every time, and then takes the complement of that, so it basically turns the entire number into 0.
+	Fourth statement: Right shift of 2^31, but really has no effect because all bits are now 0
+	Fifth statement: returns the third statement (the bits of 0) and 1, which in turn returns 0 since there is no bit corresponding to 1 that is 1
+	=> Returns 0
 - Question #2
 Y is equal to x
 		Bitwise xor value and zero returns value
@@ -11,7 +16,20 @@ Y is equal to x
 	0 bitwise-or with 0 results in 0
 	The opposite is returned, 1 always
 - Question #4
-	Return 2^(31 - n(param variable))
+	First statement: declares an int x to 2^31
+	Second statement: divides itself by 2^31, getting 1
+	Third statement: declares an int y equal to 2^31
+	Fourth statement: divides y by 2^(n+1)
+	Fifth statement: returns the bitwise and of 2^31
+	=> Returns 1 bitwise and 2^(31 - the parameter), or that equates to 2^(31-parameter)
 - Question #5
 	Returns -1
 - Question #6
+- Question #7
+	Returns the sign of the integer, 1 or -1 because it returns the parameter with bitwise and of its 2s complement, and so if you add 1 the sign will be returned with the and.
+- Question #10
+	First statement: declares an int y equal to 1
+	Second statement: declares an int z equal to 0 because x+x is an integer, and so logically complementing that would create 0
+	Return statement: returns 0 because 1 bitwise and with 0 is 0
+- Question #13
+	
