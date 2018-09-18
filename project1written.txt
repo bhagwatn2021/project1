@@ -7,7 +7,7 @@
 	=> Returns 0
 - Question #2
 Y is equal to x
-		Bitwise xor value and zero returns value
+	Bitwise xor value and zero returns value
 	Complement mask + 1 results in an overflow so that z = 0
 	The value returned, is in turn, the value supplied
 - Question #3
@@ -16,20 +16,31 @@ Y is equal to x
 	0 bitwise-or with 0 results in 0
 	The opposite is returned, 1 always
 - Question #4
-	First statement: declares an int x to 2^31
-	Second statement: divides itself by 2^31, getting 1
-	Third statement: declares an int y equal to 2^31
-	Fourth statement: divides y by 2^(n+1)
-	Fifth statement: returns the bitwise and of 2^31
-	=> Returns 1 bitwise and 2^(31 - the parameter), or that equates to 2^(31-parameter)
+	First statement: takes the double complement of n and shifts it to the left by 31 bits, changing the sign to -1
+	Second statement: right shifts by 31 thus creating -1
+	Third statement: shifts 1 31 times to the left, changing the sign and making it -2^31
+	Fourth statement: shifts y to the right n-1 times, making it -(2^(31-n+1))
+	Fifth statement: ands y with x, or -1, or 1 bitwise, maintaining the value
+	=> Returns 1 bitwise and -2^(31 - the parameter), or that equates to -2^(31-parameter+1)
 - Question #5
+	First statement: returns
 	Returns -1
 - Question #6
 - Question #7
-	Returns the sign of the integer, 1 or -1 because it returns the parameter with bitwise and of its 2s complement, and so if you add 1 the sign will be returned with the and.
+	Returns the bitwise and of the parameter and its complement plus 1. Therefore,
+	if the parameter is odd, it will return odd as when 1 is added to its complement, the rightmost
+	bit will be 1 and its complement will be 0. 0+1=1, and no digits will be carried over. The rest
+	of the digits when anded with their complement will be 0.
+	However, when the parameter is even, it returns the highest power of 2 that the parameter is divisible by.
+	When it adds 1 to the bitwise string, it keeps going along the complemented 0s (which are now 1s) and makes the complements 0
+	until it reaches a complemented 1, or a 0. Then it will turn that complement into a 1, and so when the complement
+	is anded with the original, that will return 1. This will happen when the bit holding
+	the smallest power of two that the number is divisible by is compared. So basically, the function will check
+	where the first 1 is in the original bitwise string by anding it with its bitwise complement + 1.
+	Then,
 - Question #10
 	First statement: declares an int y equal to 1
 	Second statement: declares an int z equal to 0 because x+x is an integer, and so logically complementing that would create 0
 	Return statement: returns 0 because 1 bitwise and with 0 is 0
 - Question #13
-	
+		Returns 

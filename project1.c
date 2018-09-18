@@ -83,6 +83,9 @@ int ques2(x) {
 
     return (y+z);
 }
+int ans2(x) {
+    return x;
+}
 
 /* question 3 */
 int ques3(int x){
@@ -91,6 +94,10 @@ int ques3(int x){
     z = z | y;
 
     return !z;
+}
+
+int ans3(int x){
+    return;
 }
 
 /* question 4 */
@@ -106,7 +113,7 @@ int ques4(int n) {
 
 int ans4(int n){
 
-    return 2^(31-n);
+    return -2^(31-n+1);
 }
 
 /* question 5 */
@@ -128,18 +135,26 @@ int ques6(void) {
     return word | word<<16;
 }
 
-
+int ans6(x) {
+    return x;
+}
     /* question 7 */
 
 int ques7(int x) {
-
     return x & (~x+1);
 }
 
 int ans7(int x) {
-
-    return log(x)/log(2);
-} 
+  int count = 0;
+  if(x%2==1){
+      return 1;
+  }
+  while(x%2 == 0){
+      x=x/2;
+      count++;
+  }
+  return pow(2,count);
+}
 
 /* question 8 */
 int ques8(int x) {
@@ -149,6 +164,9 @@ int ques8(int x) {
     return y | z;
 }
 
+int ans8(x) {
+    return x;
+}
 /* question 9 */
 
 int ques9(int x, int n, int c) {
@@ -160,7 +178,9 @@ int ques9(int x, int n, int c) {
     return (z  | cshift);
 }
 
-
+int ans9(x) {
+    return x;
+}
 /* question 10 */
 
 int ques10(int x) {
@@ -170,6 +190,9 @@ int ques10(int x) {
     return y & z;
 }
 
+int ans10(x) {
+    return 0;
+}
 
 /* question 11 */
 
@@ -180,6 +203,9 @@ int ques11(int x, int y) {
     return !((!a & b) | (!(a ^ b) & (y+~x)>>31));
 }
 
+int ans11(x) {
+    return x;
+}
 
 /* question 12 */
 int ques12(int x, int m, int n) {
@@ -191,6 +217,9 @@ int ques12(int x, int m, int n) {
     return !((a|b) >> 31);
 }
 
+int ans12(x) {
+    return x;
+}
 /* question 13 */
 
 int ques13(int x) {
@@ -214,6 +243,14 @@ int ques13(int x) {
     return x;
 }
 
+int ans13(int x) {
+    int count =0;
+    for(int i =0; i<32;i++){
+        count = count + (x & 1);
+      x << 1;
+    }
+    return count;
+}
 /* question 14 */
 int ques14(int x) {
     int result = 0;
@@ -225,6 +262,9 @@ int ques14(int x) {
     return result;
 }
 
+int ans14(x) {
+    return x;
+}
 /* question 15 */
 
 int ques15(int x, int n) {
@@ -234,17 +274,20 @@ int ques15(int x, int n) {
     int z = temp + ~0;
 
     return (z & x);
+
+}
+
+int ans15(int x) {
+    return ;
 }
 
 
 
-
-int
-main(){
+int main(){
     int a, b;
 
     int t1;
-
+    int t2;
  	printf("Enter first number, an integer stored into variable A preferably between 1 and 20:");
  	scanf ("%d",&a);
 	printf("\n");
@@ -256,10 +299,12 @@ main(){
 	printf("you entered a= %d b= %d  \n", a,b);
 
 
-	t1=ques0(a,b);
+	t1=ques4(a);
 	printf("output of ques0 is t1 = %d  \n", t1);
     /* To test/run the functions, you will need to input numbers and then call each of the functions, and print the return value */
 
+    	t2=ans4(a);
+    	printf("output of ques0 is t1 = %d  \n", t2);
 
 	return 0;
 }
